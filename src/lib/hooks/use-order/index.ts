@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import { HeadCell } from 'src/lib/view-models/head-cell';
-import { Order, OrderTypes } from 'src/lib/view-models/order';
+import { HeadCell } from '../../view-models/head-cell';
+import { Order, OrderTypes } from '../../view-models/order';
 
 
 export type OrderFound = {

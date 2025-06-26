@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { usePromises } from '../use-promises';
-import generatePromise, { PromiseErrorInterface } from 'src/lib/utils/generate-promise';
-import delay from 'src/lib/utils/delay';
+import generatePromise, { PromiseErrorInterface } from '../../utils/generate-promise';
+import delay from '../../utils/delay';
 
 /**
  * A hook to prevent click on double click
