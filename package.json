@@ -1,7 +1,7 @@
 {
   "name": "core-react-library-frankmd93",
   "type": "module",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "browser": {
