@@ -15,6 +15,8 @@ export * from './lib/hooks/use-error/use-error-handler';
 export * from './lib/hooks/use-error/error-provider';
 export * from './lib/hooks/use-filter-table';
 export * from './lib/hooks/use-filter-table/provider';
+export * from './lib/hooks/use-graphql';
+export * from './lib/hooks/use-graphql/stateless';
 export * from './lib/hooks/use-http-fetch';
 export * from './lib/hooks/use-http-fetch/stateless';
 export * from './lib/hooks/use-http-fetch/use-http-provider-context';
