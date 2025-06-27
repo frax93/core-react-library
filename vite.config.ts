@@ -28,7 +28,8 @@ export default defineConfig({
     }),
     copy({
       targets: [
-        { src: 'package.json', dest: 'dist' }
+        { src: 'package.json', dest: 'dist' },
+        { src: 'README.MD', dest: 'dist' }
       ],
       hook: 'writeBundle' // esegue la copia dopo il build
     }),
