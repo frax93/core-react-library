@@ -135,6 +135,25 @@ const App = () => {
 Assicurati che il modulo remoto esponga i metodi `initMyComponentWebComponent` e `MyComponentModule` per poter essere inizializzato correttamente.
 
 ---
+
+* Use the `useBtcRate` hook to fetch the current Bitcoin exchange rate
+* Example usage:
+```typescript
+import useBtcRate from './useBtcRate';
+
+const MyComponent = () => {
+  const [btcRate, fetchBtcRate] = useBtcRate();
+
+  return (
+    <div>
+      <p>Current Bitcoin rate: {btcRate}</p>
+      <button onClick={fetchBtcRate}>Refresh rate</button>
+    </div>
+  );
+};
+```
+---
+
 ## Contribuire
 
 Sono benvenuti suggerimenti, issue e pull request per migliorare la libreria!
