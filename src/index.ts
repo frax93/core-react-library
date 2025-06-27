@@ -6,6 +6,7 @@ export * from './lib/components/dynamic-loader';
 /**
  * Hooks export
  */
+export * from './lib/hooks/use-btc-rate/use-btc-rate';
 export * from './lib/hooks/use-bus';
 export * from './lib/hooks/use-click-outside';
 export * from './lib/hooks/use-debounce';
@@ -26,6 +27,7 @@ export * from './lib/hooks/use-local-storage';
 export * from './lib/hooks/use-navbar-height';
 export * from './lib/hooks/use-order';
 export * from './lib/hooks/use-promises';
+export * from './lib/hooks/use-theme-color/use-theme-color';
 export * from './lib/hooks/use-user-profile';
 export * from './lib/hooks/use-user-profile/provider';
 export * from './lib/hooks/use-user-profile/types';
