@@ -1,4 +1,4 @@
-import React, {ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import useLocalStorage from '../use-local-storage';
 import { initialContext, ProviderAuthentication } from './context';
 import { UserProfile } from './types';

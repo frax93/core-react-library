@@ -19,6 +19,7 @@ export * from './lib/hooks/use-http-fetch';
 export * from './lib/hooks/use-http-fetch/stateless';
 export * from './lib/hooks/use-http-fetch/use-http-provider-context';
 export * from './lib/hooks/use-http-loading';
+export { default as useLocalStorage } from './lib/hooks/use-local-storage';
 export * from './lib/hooks/use-local-storage';
 export * from './lib/hooks/use-navbar-height';
 export * from './lib/hooks/use-order';

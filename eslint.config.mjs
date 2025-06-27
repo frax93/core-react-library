@@ -3,11 +3,13 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import eslintPluginReact from 'eslint-plugin-react';
+import eslintConfigPrettier from "eslint-config-prettier";
 
 export default tseslint.config(
   eslint.configs.recommended,
   tseslint.configs.recommended,
   eslintPluginReact.configs.flat?.['recommended'] ?? {},
+  eslintConfigPrettier,
   {
     rules: {
       '@typescript-eslint/no-explicit-any': 'error',
@@ -35,12 +37,7 @@ export default tseslint.config(
           ignoreTranspilerName: true,
         },
       ],
-      'no-restricted-imports': [
-        'error',
-        {
-          patterns: ['@material-ui/*/*/*', '!@material-ui/core/test-utils/*'],
-        },
-      ],
+      'no-restricted-imports': ['error'],
     },
   },
 );

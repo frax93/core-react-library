@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useListener } from '../use-bus';
-import { NAVBAR_HEIGHT_EVENT } from '../../constants';
+import { NAVBAR_HEIGHT_EVENT } from '../../constants/constants';
 
 function getNavHeight() {
   return document.getElementById('navigation-menu')?.offsetHeight || 0;
