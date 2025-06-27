@@ -1,6 +1,7 @@
 # Core React Library
 
-Libreria React per gestire chiamate HTTP con hook personalizzati basati su Axios.
+Libreria React con varie funzioni di utilità tra cui:
+- Gestire chiamate HTTP con hook personalizzati basati su Axios.
 
 ---
 
