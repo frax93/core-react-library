@@ -19,6 +19,8 @@ export * from './lib/hooks/use-filter-table/provider';
 export * from './lib/hooks/use-graphql';
 export * from './lib/hooks/use-graphql/stateless';
 export * from './lib/hooks/use-http-fetch';
+export * from './lib/hooks/use-http-fetch/http-provider';
+export * from './lib/hooks/use-http-fetch/error-response';
 export * from './lib/hooks/use-http-fetch/stateless';
 export * from './lib/hooks/use-http-fetch/use-http-provider-context';
 export * from './lib/hooks/use-http-loading';
