@@ -1,5 +1,5 @@
 export class StyleLoaderService {
-  static env = process.env;
+  static env =process.env.REACT_APP_MFSHARED_REMOTE_URL;
   static async loadStyles() {
     try {
       await this.loadStylesCss();
