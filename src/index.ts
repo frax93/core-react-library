@@ -27,7 +27,7 @@ export * from './lib/hooks/use-http-fetch/http-status-code';
 export * from './lib/hooks/use-http-fetch/error-response';
 export * from './lib/hooks/use-http-fetch/stateless';
 export * from './lib/hooks/use-http-fetch/use-http-provider-context';
-export * from './lib/hooks/use-http-loading';
+export { HttpLoadingProvider, useHttpLoading, HttpLoadingContext } from './lib/hooks/use-http-loading';
 export { default as useLocalStorage } from './lib/hooks/use-local-storage';
 export * from './lib/hooks/use-local-storage';
 export * from './lib/hooks/use-navbar-height';
