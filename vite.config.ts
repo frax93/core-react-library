@@ -44,8 +44,9 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: libraryName,
-      formats: ['es'],
-      fileName: () => 'index.js',
+      formats: ['es', 'cjs'],
+      // 💡 MODIFICATO: Usa la funzione per creare nomi di file distinti per ogni formato
+      fileName: (format) => `${libraryName}.${format}.js`,
     },
     outDir: 'dist',
     rollupOptions: {

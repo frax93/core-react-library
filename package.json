@@ -2,8 +2,8 @@
   "name": "core-react-library-frankmd93",
   "type": "module",
   "version": "0.1.10",
-  "main": "index.js",
-  "module": "index.js",
+  "main": "core-react-library-frankmd93.cjs.js",
+  "module": "core-react-library-frankmd93.es.js",
   "browser": {
     "crypto": "crypto-browserify"
   },
