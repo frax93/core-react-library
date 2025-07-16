@@ -1,7 +1,7 @@
 {
   "name": "core-react-library-frankmd93",
   "type": "module",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "main": "core-react-library-frankmd93.cjs.js",
   "module": "core-react-library-frankmd93.es.js",
   "browser": {
