@@ -152,14 +152,3 @@ const MyComponent = () => {
   );
 };
 ```
----
-
-## Contribuire
-
-Sono benvenuti suggerimenti, issue e pull request per migliorare la libreria!
-
----
-
-## Licenza
-
-MIT License
