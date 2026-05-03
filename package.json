@@ -14,8 +14,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "sideEffects": false,
-  "author": "",
-  "description": "",
+  "author": "Francesco Murador",
+  "description": "A set of tools to be used in React projects",
+  "license": "UNLICENSED",
   "peerDependencies": {
     "@juggle/resize-observer": "^3.4.0",
     "axios": "^1.10.0",
