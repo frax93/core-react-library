@@ -1,6 +1,6 @@
 {
   "name": "@frank.md93/core-react-library",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "description": "A set of React tools: HTTP hooks, dynamic remote module loaders and TypeScript utilities.",
   "author": "Francesco Murador",
