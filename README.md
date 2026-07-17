@@ -1,5 +1,6 @@
 # Core React Library
 
+[![CI](https://github.com/frax93/core-react-library/actions/workflows/ci.yml/badge.svg)](https://github.com/frax93/core-react-library/actions/workflows/ci.yml)
 [![npm version](https://img.shields.io/npm/v/@frank.md93/core-react-library.svg)](https://www.npmjs.com/package/@frank.md93/core-react-library)
 [![license](https://img.shields.io/npm/l/@frank.md93/core-react-library.svg)](./LICENSE)
 [![types](https://img.shields.io/npm/types/@frank.md93/core-react-library.svg)](https://www.typescriptlang.org/)
