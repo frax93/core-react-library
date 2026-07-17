@@ -33,7 +33,7 @@ export class HttpBackendError extends Error {
     statusCode: HttpStatusCode,
     globallyHandled?: boolean
   ) {
-    super('An error was thrown while performing a http request against PrimaMi backend');
+    super('An error was thrown while performing a http request against backend');
     this.code = code;
     this.messages = messages;
     this.globallyHandled = globallyHandled || false;

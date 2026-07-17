@@ -7,7 +7,6 @@ export * from './lib/components/dynamic-loader/remote-loader';
 /**
  * Hooks export
  */
-export * from './lib/hooks/use-btc-rate/use-btc-rate';
 export * from './lib/hooks/use-bus';
 export * from './lib/hooks/use-click-outside';
 export * from './lib/hooks/use-debounce';

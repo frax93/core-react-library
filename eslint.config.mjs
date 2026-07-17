@@ -11,6 +11,11 @@ export default tseslint.config(
   eslintPluginReact.configs.flat?.['recommended'] ?? {},
   eslintConfigPrettier,
   {
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
     rules: {
       '@typescript-eslint/no-explicit-any': 'error',
       'react/react-in-jsx-scope': 'off',

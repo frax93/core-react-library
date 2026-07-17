@@ -1,22 +1,59 @@
 {
-  "name": "core-react-library-frankmd93",
+  "name": "@frank.md93/core-react-library",
+  "version": "0.2.0",
   "type": "module",
-  "version": "0.1.13",
-  "main": "core-react-library-frankmd93.cjs.js",
-  "module": "core-react-library-frankmd93.es.js",
-  "browser": {
-    "crypto": "crypto-browserify"
+  "description": "A set of React tools: HTTP hooks, dynamic remote module loaders and TypeScript utilities.",
+  "author": "Francesco Murador",
+  "license": "MIT",
+  "homepage": "https://github.com/frax93/core-react-library#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frax93/core-react-library.git"
   },
+  "bugs": {
+    "url": "https://github.com/frax93/core-react-library/issues"
+  },
+  "keywords": [
+    "react",
+    "react-hooks",
+    "typescript",
+    "http",
+    "axios",
+    "module-federation",
+    "web-components",
+    "utils"
+  ],
+  "main": "core-react-library.cjs",
+  "module": "core-react-library.js",
   "types": "index.d.ts",
-  "scripts": {
-    "build": "vite build",
-    "pre-commit": "lint-staged",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./core-react-library.js",
+      "require": "./core-react-library.cjs"
+    },
+    "./package.json": "./package.json"
   },
   "sideEffects": false,
-  "author": "Francesco Murador",
-  "description": "A set of tools to be used in React projects",
-  "license": "UNLICENSED",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vite build",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build",
+    "prepare": "husky",
+    "pre-commit": "lint-staged"
+  },
   "peerDependencies": {
     "@juggle/resize-observer": "^3.4.0",
     "axios": "^1.10.0",
@@ -33,12 +70,15 @@
     "@rollup/plugin-replace": "^6.0.2",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.3",
-    "@types/node": "^24.0.4",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^24.13.3",
     "@types/react": "^19.1.8",
     "@vitejs/plugin-react": "^4.6.0",
     "axios": "^1.10.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-react": "^7.37.5",
+    "husky": "^9.1.7",
+    "jsdom": "^26.1.0",
     "lint-staged": "^16.1.2",
     "prettier": "^3.6.1",
     "rollup": "^4.44.1",
@@ -49,6 +89,7 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.35.0",
     "vite": "^6.3.5",
-    "vite-plugin-dts": "^4.5.4"
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^3.2.7"
   }
 }

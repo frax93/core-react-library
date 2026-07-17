@@ -2,7 +2,15 @@ import { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { ResizeObserver as Polyfill } from '@juggle/resize-observer';
 import debounce from '../../utils/debounce';
 
-const ResizeObserver = window.ResizeObserver || Polyfill;
+/**
+ * Resolves the ResizeObserver implementation lazily (at call time, not at module
+ * evaluation) so that importing the library does not crash in Node/SSR
+ * environments where `window` is not defined.
+ */
+const getResizeObserver = (): typeof Polyfill =>
+  (typeof window !== 'undefined' && window.ResizeObserver
+    ? window.ResizeObserver
+    : Polyfill) as typeof Polyfill;
 
 export function useElementScrollWidthObserver(
   domElement: HTMLElement | null,
@@ -42,7 +50,8 @@ export function useElementScrollWidthObserver(
 
       // Imposta il ResizeObserver
       if (!observerRef.current) {
-        observerRef.current = new ResizeObserver(debounce(handleElementResize, debounceTime));
+        const ResizeObserverImpl = getResizeObserver();
+        observerRef.current = new ResizeObserverImpl(debounce(handleElementResize, debounceTime));
       }
 
       observerRef.current.observe(domElement);

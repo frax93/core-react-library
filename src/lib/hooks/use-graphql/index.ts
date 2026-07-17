@@ -20,8 +20,10 @@ interface UseGraphQLFetchOptions<TData> {
   variables?: GraphQLVariables;
   initialData?: TData;
   onBootstrap?: boolean;
+  /** GraphQL endpoint to POST to. Defaults to `/graphql`. */
+  endpoint?: string;
   options?: GraphQLRequestOptions;
-  transformer?: (response: AxiosResponse<GraphQLResponse<TData>>) => TData,
+  transformer?: (response: AxiosResponse<GraphQLResponse<TData>>) => TData;
 }
 
 export function useGraphQLFetch<TData = unknown>(
@@ -30,13 +32,14 @@ export function useGraphQLFetch<TData = unknown>(
     variables,
     initialData,
     onBootstrap = false,
+    endpoint = '/graphql',
     options,
     transformer = (response) => response.data.data,
   }: UseGraphQLFetchOptions<TData> = {}
 ) {
   const payload: GraphQLPayload = { query, variables };
 
-  return useHttpFetch<GraphQLResponse<TData>, TData>('/api/graphql', {
+  return useHttpFetch<GraphQLResponse<TData>, TData>(endpoint, {
     onBootstrap,
     initialData,
     transformer,

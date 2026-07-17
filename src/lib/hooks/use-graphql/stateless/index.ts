@@ -19,12 +19,14 @@ interface UseGraphQLClientOptions<T> {
   variables?: GraphQLVariables;
   options?: Partial<RequestOptions>;
   transformer?: (response: AxiosResponse<GraphQLResponse<T>>) => T;
+  /** GraphQL endpoint to POST to. Defaults to `/graphql`. */
+  endpoint?: string;
 }
 
 /**
  * Stateless GraphQL client using useHttpClient under the hood.
  * @param query GraphQL query string
- * @param config Optional config (variables, options, transformer)
+ * @param config Optional config (variables, endpoint, options, transformer)
  * @returns A callable function to execute the GraphQL request
  */
 export function useGraphQLClient<T = unknown>(
@@ -32,12 +34,13 @@ export function useGraphQLClient<T = unknown>(
   {
     variables,
     options,
+    endpoint = '/graphql',
     transformer = (res) => res.data.data,
   }: UseGraphQLClientOptions<T> = {}
 ): HttpRequestFunction<GraphQLResponse<T>, T> {
   const payload: GraphQLPayload = { query, variables };
 
-  return useHttpClient<GraphQLResponse<T>, T>('/api/graphql', {
+  return useHttpClient<GraphQLResponse<T>, T>(endpoint, {
     transformer,
     options: {
       ...options,

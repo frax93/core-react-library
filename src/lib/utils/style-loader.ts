@@ -1,9 +1,14 @@
+/**
+ * Loads a remote stylesheet (`<baseUrl>/styles.css`) and script
+ * (`<baseUrl>/scripts.js`) into the document. The base URL is passed by the
+ * consumer, so the service is not coupled to any specific project or
+ * environment variable.
+ */
 export class StyleLoaderService {
-  static env =process.env.REACT_APP_MFSHARED_REMOTE_URL;
-  static async loadStyles() {
+  static async loadStyles(baseUrl: string): Promise<void> {
     try {
-      await this.loadStylesCss();
-      await this.loadStylesJs();
+      await this.loadStylesCss(baseUrl);
+      await this.loadStylesJs(baseUrl);
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error(e);
@@ -11,27 +16,26 @@ export class StyleLoaderService {
     }
   }
 
-  private static loadStylesCss(): Promise<void> {
+  private static loadStylesCss(baseUrl: string): Promise<void> {
     return new Promise((resolve, reject) => {
       const { head } = document;
       const link = document.createElement('link');
       link.rel = 'stylesheet';
       link.onload = () => resolve();
       link.onerror = () => reject();
-      link.href = `${this.env}/styles.css`;
+      link.href = `${baseUrl}/styles.css`;
       head.appendChild(link);
     });
   }
 
-  private static loadStylesJs(): Promise<void> {
+  private static loadStylesJs(baseUrl: string): Promise<void> {
     return new Promise((resolve, reject) => {
       const { body } = document;
-      const scriptSrc = `${this.env}/scripts.js`;
-      // Verifica se uno script con la stessa src esiste già
+      const scriptSrc = `${baseUrl}/scripts.js`;
+      // Skip if a script with the same src is already present.
       const existingScript = document.querySelector(`script[src="${scriptSrc}"]`);
 
       if (existingScript) {
-        // Lo script esiste già, risolvi la Promise immediatamente
         resolve();
         return;
       }

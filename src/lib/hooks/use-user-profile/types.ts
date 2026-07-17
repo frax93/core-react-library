@@ -1,15 +1,17 @@
-import { AuthData } from "../../models/user";
+import { AuthData } from '../../models/user';
 
-
-export interface UserProfile {
-  datiLogin?: AuthData;
+/**
+ * Internal state persisted by the AuthenticationProvider: the auth data plus
+ * some UI flags.
+ */
+export interface UserProfile<TUser = unknown> extends AuthData<TUser> {
   isLoading?: boolean;
-  stateLoginModal?: boolean | undefined;
+  stateLoginModal?: boolean;
 }
 
-export interface UserProfileContext {
-  userProfile: AuthData;
-  setUserProfile: (a?: AuthData) => AuthData;
+export interface UserProfileContext<TUser = unknown> {
+  userProfile: AuthData<TUser>;
+  setUserProfile: (a?: AuthData<TUser>) => AuthData<TUser>;
   openLoginModal?: (open: boolean) => void;
 }
 
